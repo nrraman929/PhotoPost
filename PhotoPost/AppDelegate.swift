@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        Parse.initializeWithConfiguration(
+            ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "PhotoPost"
+                configuration.clientKey = "keyMaster"
+                configuration.server = "https://young-waters-88632.herokuapp.com/parse"
+            })
+        )
+        
+        if PFUser.currentUser() != nil {
+            // if there is a logged in user then load the home view controller
+            let viewController = self.window!.rootViewController!.storyboard!.instantiateViewControllerWithIdentifier("postView")
+            self.window?.rootViewController = viewController
+        }
+        
         return true
     }
 
