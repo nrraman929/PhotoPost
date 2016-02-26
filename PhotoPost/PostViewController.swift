@@ -17,17 +17,38 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     override func viewWillAppear(animated: Bool) {
-       /* let vc = UIImagePickerController()
-        vc.delegate = self
-        vc.allowsEditing = true
-        vc.sourceType = UIImagePickerControllerSourceType.Camera
         
-        self.presentViewController(vc, animated: true, completion: nil)*/
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func imagePickerController(picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+            let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+    }
+    
+    
+    @IBAction func takePhoto(sender: AnyObject) {
+        if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+            let vc = UIImagePickerController()
+            vc.delegate = self
+            vc.allowsEditing = true
+            vc.sourceType = UIImagePickerControllerSourceType.Camera
+        
+            self.presentViewController(vc, animated: true, completion: nil)
+        } else {
+            let vc = UIImagePickerController()
+            vc.delegate = self
+            vc.allowsEditing = true
+            vc.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+        
     }
 
 
