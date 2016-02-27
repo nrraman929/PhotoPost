@@ -73,10 +73,16 @@
                                     <action selector="takePhoto:" destination="nBy-5B-CUq" eventType="touchUpInside" id="VO5-HS-Xv8"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xe1-PA-axK">
+                                <rect key="frame" x="20" y="28" width="280" height="280"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="F2S-G8-28T"/>
+                    <connections>
+                        <outlet property="selectedImageView" destination="xe1-PA-axK" id="ff6-HN-eWp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jlu-Hg-oB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
