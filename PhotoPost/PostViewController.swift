@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import Parse
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var selectedImageView: UIImageView!
+    
+    @IBOutlet weak var captionField: UITextField!
 
+    @IBOutlet weak var postButton: UIButton!
+    
+    var media: [PFObject]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -65,6 +72,44 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
             self.presentViewController(vc, animated: true, completion: nil)
         }
+        
+    }
+    
+    
+    @IBAction func onPost(sender: AnyObject) {
+        
+        UserMedia.postUserImage(self.resize(selectedImageView.image!, newSize: CGSize(width: 160, height: 160)), withCaption: captionField.text) { (success: Bool, error: NSError?) -> Void in
+            if success {
+                print("got image")
+            } else {
+                print(error)
+            }
+        }
+        
+        //////////////////////////////////////////////////////////////////////
+        
+        let query = PFQuery(className: "UserMedia")
+        query.orderByDescending("createdAt")
+        query.includeKey("author")
+        query.limit = 20
+        
+        query.findObjectsInBackgroundWithBlock { (media: [PFObject]?, error: NSError?) -> Void in
+            if let media = media {
+                // do something with the data fetched
+                self.media = media
+                self.performSegueWithIdentifier("photosSegue", sender: self)
+                
+            } else {
+                // handle error
+                print(error)
+            }
+        }
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let vc = segue.destinationViewController as? PhotosViewController
+        vc!.media = media
         
     }
 

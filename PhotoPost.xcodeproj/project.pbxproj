@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1911BC191C81E983006A6D91 /* UserMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911BC181C81E983006A6D91 /* UserMedia.swift */; };
+		1911BC1B1C81F722006A6D91 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911BC1A1C81F722006A6D91 /* PhotosViewController.swift */; };
+		1911BC1D1C81F7EB006A6D91 /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911BC1C1C81F7EB006A6D91 /* PhotosCell.swift */; };
 		19548AA31C8086510025C99A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19548AA21C8086510025C99A /* AppDelegate.swift */; };
 		19548AA51C8086510025C99A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19548AA41C8086510025C99A /* PostViewController.swift */; };
 		19548AA81C8086510025C99A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19548AA61C8086510025C99A /* Main.storyboard */; };
@@ -29,6 +32,9 @@
 
 /* Begin PBXFileReference section */
 		13345F67DC01C988D63F77F3 /* Pods-PhotoPost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoPost.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoPost/Pods-PhotoPost.release.xcconfig"; sourceTree = "<group>"; };
+		1911BC181C81E983006A6D91 /* UserMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMedia.swift; sourceTree = "<group>"; };
+		1911BC1A1C81F722006A6D91 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		1911BC1C1C81F7EB006A6D91 /* PhotosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
 		19548A9F1C8086500025C99A /* PhotoPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19548AA21C8086510025C99A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19548AA41C8086510025C99A /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +99,9 @@
 				19548AAB1C8086510025C99A /* LaunchScreen.storyboard */,
 				19548AAE1C8086510025C99A /* Info.plist */,
 				19548AC21C8089AB0025C99A /* LoginViewController.swift */,
+				1911BC181C81E983006A6D91 /* UserMedia.swift */,
+				1911BC1A1C81F722006A6D91 /* PhotosViewController.swift */,
+				1911BC1C1C81F7EB006A6D91 /* PhotosCell.swift */,
 			);
 			path = PhotoPost;
 			sourceTree = "<group>";
@@ -276,8 +285,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				19548AC31C8089AB0025C99A /* LoginViewController.swift in Sources */,
+				1911BC191C81E983006A6D91 /* UserMedia.swift in Sources */,
+				1911BC1D1C81F7EB006A6D91 /* PhotosCell.swift in Sources */,
 				19548AA51C8086510025C99A /* PostViewController.swift in Sources */,
 				19548AA31C8086510025C99A /* AppDelegate.swift in Sources */,
+				1911BC1B1C81F722006A6D91 /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
