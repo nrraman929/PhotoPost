@@ -88,6 +88,13 @@
                                     <action selector="onPost:" destination="nBy-5B-CUq" eventType="touchUpInside" id="3Wi-UO-ugS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Cn-cd-dZv">
+                                <rect key="frame" x="253" y="518" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="onLogout:" destination="nBy-5B-CUq" eventType="touchUpInside" id="iZU-FZ-B9i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

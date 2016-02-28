@@ -112,6 +112,22 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         vc!.media = media
         
     }
+    
+    
+    @IBAction func onLogout(sender: AnyObject) {
+        
+        PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
+            if error == nil {
+                
+                self.dismissViewControllerAnimated(
+                    true, completion: nil)
+                print("logged out")
+                
+            } else {
+                print(error)
+            }
+        }
+    }
 
 
 }
