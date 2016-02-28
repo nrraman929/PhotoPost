@@ -119,8 +119,9 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
             if error == nil {
                 
-                self.dismissViewControllerAnimated(
-                    true, completion: nil)
+                let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                
+                appdelegate.window?.rootViewController = appdelegate.window!.rootViewController!.storyboard!.instantiateViewControllerWithIdentifier("loginView")
                 print("logged out")
                 
             } else {
